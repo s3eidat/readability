@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Readability — Free Readability Checker: Flesch, Fog, SMOG | S3eidat Tools</title>
+<meta name="description" content="Check how easy your English writing is to read: Flesch Reading Ease, Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau and ARI, with long sentences, passive voice and adverbs highlighted. Free and private.">
+<meta property="og:title" content="Readability — check how easy your writing is to read">
+<meta property="og:description" content="Six readability scores and highlighted hints. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="readability">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Readability</h1>
+    <p>Paste your English text to see how easy it is to read, which grade level it suits, and which sentences to fix first.</p>
+  </section>
+
+  <div class="rd-grid">
+    <section class="card">
+      <div class="row between">
+        <h2>Your text</h2>
+        <div class="row">
+          <button class="btn ghost small" id="sample">Sample</button>
+          <button class="btn ghost small" id="clear"><svg class="i"><use href="#i-trash"/></svg>Clear</button>
+        </div>
+      </div>
+      <label for="input" class="faint">English text (saved on this device)</label>
+      <textarea class="textarea prose rd-input mt" id="input" dir="auto" placeholder="Paste an article, an email or a page of your draft…"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>Result</h2>
+      <div id="summary"></div>
+      <div id="scores" class="mt"></div>
+    </section>
+  </div>
+
+  <section class="card mt">
+    <div class="row between">
+      <h2>Highlights</h2>
+      <div class="row rd-legend" role="group" aria-label="Show highlights">
+        <button class="chip rd-tog l-hard" data-show="hard" aria-pressed="true">Long sentences <b id="cHard">0</b></button>
+        <button class="chip rd-tog l-passive" data-show="passive" aria-pressed="true">Passive voice <b id="cPassive">0</b></button>
+        <button class="chip rd-tog l-adverb" data-show="adverb" aria-pressed="true">Adverbs <b id="cAdverb">0</b></button>
+      </div>
+    </div>
+    <div class="out rd-hl mt" id="hl" tabindex="0"></div>
+    <p class="faint mt">Hints, not rules: passive voice and adverbs are found by pattern, and syllables are estimated, so treat scores as a guide.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

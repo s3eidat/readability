@@ -1,0 +1,36 @@
+.rd-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 860px) { .rd-grid { grid-template-columns: minmax(0, 1fr); } }
+.rd-input { min-height: 430px; font-size: 15px; line-height: 1.7; }
+.rd-verdict { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; }
+.rd-verdict h3 { margin: 0 0 4px; font-size: 19px; letter-spacing: -.01em; }
+.rd-verdict p { margin: 0 0 4px; }
+.rd-score { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 92px; height: 92px; border-radius: 50%; border: 6px solid currentColor; text-align: center; }
+.rd-score b { font-size: 28px; line-height: 1; color: var(--text); }
+.rd-score span { font-size: 10px; color: var(--text-3); line-height: 1.1; margin-top: 3px; max-width: 64px; }
+.rd-score.ok { color: var(--ok); }
+.rd-score.warn { color: var(--warn); }
+.rd-score.bad { color: var(--danger); }
+.rd-ar { margin: 12px 0 0; }
+.rd-small { margin: 10px 0 0; }
+#scores .tbl td.num { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; width: 64px; }
+#scores .stats { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+#scores .stat b { font-size: 20px; }
+
+.rd-legend { gap: 6px; }
+.rd-tog { cursor: pointer; }
+.rd-tog b { font-variant-numeric: tabular-nums; }
+.rd-tog[aria-pressed="false"] { opacity: .45; }
+.l-hard { border-color: rgba(245, 194, 107, .5); }
+.l-passive { border-color: rgba(124, 165, 255, .55); }
+.l-adverb { border-color: rgba(240, 160, 208, .55); }
+.rd-hl { font-family: var(--font); font-size: 15.5px; line-height: 1.85; min-height: 120px; max-height: 560px; overflow: auto; }
+.rd-hl .s-hard { background: rgba(245, 194, 107, .18); border-radius: 3px; }
+.rd-hl .s-vhard { background: rgba(255, 123, 123, .2); border-radius: 3px; }
+.rd-hl mark { color: inherit; border-radius: 3px; padding: 0 1px; }
+.rd-hl .m-passive { background: rgba(124, 165, 255, .3); }
+.rd-hl .m-adverb { background: rgba(240, 160, 208, .3); }
+.rd-hl .off { background: none; }
+[data-theme="light"] .rd-hl .s-hard { background: rgba(183, 121, 31, .16); }
+[data-theme="light"] .rd-hl .s-vhard { background: rgba(214, 69, 69, .14); }
+[data-theme="light"] .rd-hl .m-passive { background: rgba(67, 56, 202, .16); }
+[data-theme="light"] .rd-hl .m-adverb { background: rgba(176, 18, 122, .14); }
